@@ -11,7 +11,7 @@ public class Stream05Digerleri {
         System.out.println("Tek Sayilarin Toplami: "+tekSayilariTopla(1,20));
         System.out.println("Faktoriyel: " + IntFaktoriyel(5));
         System.out.println("Faktoriyel: " + longFaktoriyel(20));
-        System.out.println("Faktoriyel: " + dounleFaktoriyel(20));
+        System.out.println("Faktoriyel: " + doubleFaktoriyel(20));
         System.out.println("50'den Büyük Olan Notlar: "+doubleDiziyiListeCevir());
     }
     public static int topla(int deger){
@@ -29,7 +29,7 @@ public class Stream05Digerleri {
     public static Long longFaktoriyel(int n){
         return LongStream.rangeClosed(1,n).reduce(1,(x, y)->x*y);
     }
-    public static Double dounleFaktoriyel(int n){
+    public static Double doubleFaktoriyel(int n){
         return DoubleStream.iterate(1, x-> x+1).limit(n).reduce(1,(x,y)->x*y);
     }
     // Bir double diziyi (notlar) Stream nesnesine dönüştürerek bu dizi içerisinde bulunan
