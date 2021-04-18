@@ -2,7 +2,7 @@ package streamProje01;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.OptionalDouble;
 
 public class Main {
 
@@ -13,17 +13,27 @@ public class Main {
         testOgrenciOlustur();
         System.out.println("Isme göre Liste");
         ismeGöreListele("ahmet");
+
         System.out.println("\nSoyad'a göre Liste");
         soyIsmeGoreListele("Can");
+
         System.out.println("\nCinsiyet'e göre Liste");
         cinsiyeteGoreListele("Kadin");
+
         System.out.println("\nNotlar'a göre Liste");
         notaGoreSirala(95.5);
+
         System.out.println("\nYas'a göre Liste");
         yasaGoreSirala(40);
-        //sinifOrtalamasiHesapla();
 
+        System.out.println("\nSinif Ortalamasi");
+        sinifOrtalamasiHesapla();
     }
+    private static void sinifOrtalamasiHesapla() {
+        OptionalDouble ortalama=ogrListesi.stream().mapToDouble(Ogrenci::getDiplomaNotu).average();
+        System.out.println(ortalama);
+    }
+
     private static void yasaGoreSirala(int yas) {
         ogrListesi.stream().filter(t-> t.getYas()==yas).forEach(System.out::println);
     }
