@@ -2,6 +2,7 @@ package streamProje01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -17,12 +18,20 @@ public class Main {
         System.out.println("\nCinsiyet'e göre Liste");
         cinsiyeteGoreListele("Kadin");
         System.out.println("\nNotlar'a göre Liste");
-        /*
         notaGoreSirala(95.5);
-        yasaGoreSirala();
-        sinifOrtalamasiHesapla();
-        */
+        System.out.println("\nYas'a göre Liste");
+        yasaGoreSirala(40);
+        //sinifOrtalamasiHesapla();
+
     }
+    private static void yasaGoreSirala(int yas) {
+        ogrListesi.stream().filter(t-> t.getYas()==yas).forEach(System.out::println);
+    }
+
+    private static void notaGoreSirala(double diplomaNotu) {
+        ogrListesi.stream().filter(t -> t.getDiplomaNotu() == diplomaNotu).forEach(System.out::println);
+    }
+
     private static void cinsiyeteGoreListele(String cinsiyet) {
         ogrListesi.stream().filter(t->t.getCinsiyet().equalsIgnoreCase(cinsiyet)).forEach(System.out::println);
     }

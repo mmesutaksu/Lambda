@@ -53,7 +53,7 @@ public class Stream03Integer {
         return list.stream().reduce(1, (x, y) -> x * y);
     }
     public static int kacTekrar(List<Integer> list) {
-       return (int) list.stream().filter(x-> x==9).count();
+        return (int) list.stream().filter(x-> x==9).count();
     }
     // Bir listedeki negatif sayilari ayri bir liste olarak döndüren methodu yazalim
     public static List<Integer> negatifList(List<Integer> list) {
